@@ -1,0 +1,84 @@
+int LED0pin=43;
+int SW0 = 38;
+int LED1pin=44;
+int SW1 = 39;
+int LED2pin=45;
+int SW2 = 40;
+int LED3pin=46;
+int SW3 = 41;
+
+bool LED0State = false;
+bool LED1State = false;
+bool LED2State = false;
+bool LED3State = false;
+
+
+
+void setup() {
+
+pinMode(LED0pin,OUTPUT);
+pinMode(LED1pin,OUTPUT);
+pinMode(LED2pin,OUTPUT);
+pinMode(LED3pin,OUTPUT);
+pinMode(SW0,INPUT_PULLUP);
+pinMode(SW1,INPUT_PULLUP);
+pinMode(SW2,INPUT_PULLUP);
+pinMode(SW3,INPUT_PULLUP);
+
+
+
+}
+
+void loop() {
+ 
+ /* digitalWrite(LED0pin,HIGH);
+  delay(1000);
+  digitalWrite(LED0pin,LOW);
+  
+  digitalWrite(LED1pin,HIGH);
+  delay(1000);
+  digitalWrite(LED1pin,LOW);
+
+  digitalWrite(LED2pin,HIGH);
+  
+  digitalWrite(LED2pin,HIGH);
+  delay(1000);
+  digitalWrite(LED2pin,LOW);
+
+  digitalWrite(LED3pin,HIGH);
+  delay(1000);
+  digitalWrite(LED3pin,LOW);
+
+  delay(1000);*/
+
+  if(digitalRead(SW0)==HIGH){
+    LED0State = !LED0State;
+    delay(250);
+  }
+
+  digitalWrite(LED0pin,LED0State);
+
+
+  if(digitalRead(SW1)==HIGH){
+    LED1State = !LED1State;
+    delay(250);
+  }
+
+  digitalWrite(LED1pin,LED1State);
+
+ if(digitalRead(SW2)==HIGH){
+    LED2State = !LED2State;
+    delay(250);
+  }
+
+  digitalWrite(LED2pin,LED2State);
+
+ if(digitalRead(SW3)==HIGH){
+    LED3State = !LED3State;
+    delay(250);
+  }
+
+  digitalWrite(LED3pin,LED3State);
+
+
+}
